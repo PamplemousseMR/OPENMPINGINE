@@ -12,7 +12,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-- [MSMPI](hhttps://docs.microsoft.com/en-us/message-passing-interface/microsoft-mpi) :  Microsoft MPI library project.
+- [MSMPI](https://docs.microsoft.com/en-us/message-passing-interface/microsoft-mpi) :  Microsoft MPI library project.
 
 ### Generation
 
