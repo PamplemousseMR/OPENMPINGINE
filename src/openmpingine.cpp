@@ -1,7 +1,6 @@
 #include <mpi.h>
 #include <iostream>
-#include <thread>
-#include <chrono>
+#include <cstring>
 
 static const unsigned s_MATRIX_SIZE = 10;
 static const unsigned s_MASTER = 0;

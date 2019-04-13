@@ -1,5 +1,5 @@
 language: cpp
-sudo: false
+sudo: true
 
 matrix:
   include:
@@ -123,9 +123,8 @@ matrix:
             - ubuntu-toolchain-r-test
           packages:
             - g++-4.9
-            - libcr-dev
-            - mpich2
-            - mpich2-doc
+            - mpich
+            - libmpich-dev
       compiler: g++
       env: CXX=g++ CC=gcc BUILD_TYPE=Debug
 
@@ -136,9 +135,8 @@ matrix:
             - ubuntu-toolchain-r-test
           packages:
             - g++-5
-            - libcr-dev
-            - mpich2
-            - mpich2-doc
+            - mpich
+            - libmpich-dev
       compiler: g++
       env: CXX=g++ CC=gcc BUILD_TYPE=Debug
 
@@ -149,9 +147,8 @@ matrix:
             - ubuntu-toolchain-r-test
           packages:
             - g++-6
-            - libcr-dev
-            - mpich2
-            - mpich2-doc
+            - mpich
+            - libmpich-dev
       compiler: g++
       env: CXX=g++ CC=gcc BUILD_TYPE=Debug
 
@@ -162,9 +159,8 @@ matrix:
             - ubuntu-toolchain-r-test
           packages:
             - g++-7
-            - libcr-dev
-            - mpich2
-            - mpich2-doc
+            - mpich
+            - libmpich-dev
       compiler: g++
       env: CXX=g++ CC=gcc BUILD_TYPE=Debug
 
@@ -175,9 +171,8 @@ matrix:
             - ubuntu-toolchain-r-test
           packages:
             - g++-8
-            - libcr-dev
-            - mpich2
-            - mpich2-doc
+            - mpich
+            - libmpich-dev
       compiler: g++
       env: CXX=g++ CC=gcc BUILD_TYPE=Debug
 
@@ -195,9 +190,8 @@ matrix:
             - llvm-toolchain-precise-3.6
           packages:
             - clang-3.6
-            - libcr-dev
-            - mpich2
-            - mpich2-doc
+            - mpich
+            - libmpich-dev
       compiler: clang++
       env: CXX=clang++ CC=clang BUILD_TYPE=Debug
 
@@ -209,9 +203,8 @@ matrix:
             - llvm-toolchain-precise-3.7
           packages:
             - clang-3.7
-            - libcr-dev
-            - mpich2
-            - mpich2-doc
+            - mpich
+            - libmpich-dev
       compiler: clang++
       env: CXX=clang++ CC=clang BUILD_TYPE=Debug
 
@@ -223,9 +216,8 @@ matrix:
             - llvm-toolchain-precise-3.8
           packages:
             - clang-3.8
-            - libcr-dev
-            - mpich2
-            - mpich2-doc
+            - mpich
+            - libmpich-dev
       compiler: clang++
       env: CXX=clang++ CC=clang BUILD_TYPE=Debug
 
@@ -237,9 +229,8 @@ matrix:
             - llvm-toolchain-precise-3.9
           packages:
             - clang-3.9
-            - libcr-dev
-            - mpich2
-            - mpich2-doc
+            - mpich
+            - libmpich-dev
       compiler: clang++
       env: CXX=clang++ CC=clang BUILD_TYPE=Debug
 
@@ -251,9 +242,8 @@ matrix:
             - llvm-toolchain-trusty-4.0
           packages:
             - clang-4.0
-            - libcr-dev
-            - mpich2
-            - mpich2-doc
+            - mpich
+            - libmpich-dev
       compiler: clang++
       env: CXX=clang++ CC=clang BUILD_TYPE=Debug
 
@@ -265,9 +255,8 @@ matrix:
             - llvm-toolchain-trusty-5.0
           packages:
             - clang-5.0
-            - libcr-dev
-            - mpich2
-            - mpich2-doc
+            - mpich
+            - libmpich-dev
       compiler: clang++
       env: CXX=clang++ CC=clang BUILD_TYPE=Debug
 
@@ -279,9 +268,8 @@ matrix:
             - llvm-toolchain-trusty-6.0
           packages:
             - clang-6.0
-            - libcr-dev
-            - mpich2
-            - mpich2-doc
+            - mpich
+            - libmpich-dev
       compiler: clang++
       env: CXX=clang++ CC=clang BUILD_TYPE=Debug
 
@@ -405,9 +393,8 @@ matrix:
             - ubuntu-toolchain-r-test
           packages:
             - g++-4.9
-            - libcr-dev
-            - mpich2
-            - mpich2-doc
+            - mpich
+            - libmpich-dev
       compiler: g++
       env: CXX=g++ CC=gcc BUILD_TYPE=Release
 
@@ -418,9 +405,8 @@ matrix:
             - ubuntu-toolchain-r-test
           packages:
             - g++-5
-            - libcr-dev
-            - mpich2
-            - mpich2-doc
+            - mpich
+            - libmpich-dev
       compiler: g++
       env: CXX=g++ CC=gcc BUILD_TYPE=Release
 
@@ -431,9 +417,8 @@ matrix:
             - ubuntu-toolchain-r-test
           packages:
             - g++-6
-            - libcr-dev
-            - mpich2
-            - mpich2-doc
+            - mpich
+            - libmpich-dev
       compiler: g++
       env: CXX=g++ CC=gcc BUILD_TYPE=Release
 
@@ -444,9 +429,8 @@ matrix:
             - ubuntu-toolchain-r-test
           packages:
             - g++-7
-            - libcr-dev
-            - mpich2
-            - mpich2-doc
+            - mpich
+            - libmpich-dev
       compiler: g++
       env: CXX=g++ CC=gcc BUILD_TYPE=Release
 
@@ -457,9 +441,8 @@ matrix:
             - ubuntu-toolchain-r-test
           packages:
             - g++-8
-            - libcr-dev
-            - mpich2
-            - mpich2-doc
+            - mpich
+            - libmpich-dev
       compiler: g++
       env: CXX=g++ CC=gcc BUILD_TYPE=Release
 
@@ -477,9 +460,8 @@ matrix:
             - llvm-toolchain-precise-3.6
           packages:
             - clang-3.6
-            - libcr-dev
-            - mpich2
-            - mpich2-doc
+            - mpich
+            - libmpich-dev
       compiler: clang++
       env: CXX=clang++ CC=clang BUILD_TYPE=Release
 
@@ -491,9 +473,8 @@ matrix:
             - llvm-toolchain-precise-3.7
           packages:
             - clang-3.7
-            - libcr-dev
-            - mpich2
-            - mpich2-doc
+            - mpich
+            - libmpich-dev
       compiler: clang++
       env: CXX=clang++ CC=clang BUILD_TYPE=Release
 
@@ -505,9 +486,8 @@ matrix:
             - llvm-toolchain-precise-3.8
           packages:
             - clang-3.8
-            - libcr-dev
-            - mpich2
-            - mpich2-doc
+            - mpich
+            - libmpich-dev
       compiler: clang++
       env: CXX=clang++ CC=clang BUILD_TYPE=Release
 
@@ -519,9 +499,8 @@ matrix:
             - llvm-toolchain-precise-3.9
           packages:
             - clang-3.9
-            - libcr-dev
-            - mpich2
-            - mpich2-doc
+            - mpich
+            - libmpich-dev
       compiler: clang++
       env: CXX=clang++ CC=clang BUILD_TYPE=Release
 
@@ -533,9 +512,8 @@ matrix:
             - llvm-toolchain-trusty-4.0
           packages:
             - clang-4.0
-            - libcr-dev
-            - mpich2
-            - mpich2-doc
+            - mpich
+            - libmpich-dev
       compiler: clang++
       env: CXX=clang++ CC=clang BUILD_TYPE=Release
 
@@ -547,9 +525,8 @@ matrix:
             - llvm-toolchain-trusty-5.0
           packages:
             - clang-5.0
-            - libcr-dev
-            - mpich2
-            - mpich2-doc
+            - mpich
+            - libmpich-dev
       compiler: clang++
       env: CXX=clang++ CC=clang BUILD_TYPE=Release
 
@@ -561,14 +538,14 @@ matrix:
             - llvm-toolchain-trusty-6.0
           packages:
             - clang-6.0
-            - libcr-dev
-            - mpich2
-            - mpich2-doc
+            - mpich
+            - libmpich-dev
       compiler: clang++
       env: CXX=clang++ CC=clang BUILD_TYPE=Release
 
 before_install:
   - eval
+  - find /usr -name libmpich
 
 before_script:
   - mkdir build
@@ -577,3 +554,4 @@ before_script:
 
 script:
   - make
+  - mpirun -np 5 ./openmpingine
