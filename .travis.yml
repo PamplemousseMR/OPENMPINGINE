@@ -38,7 +38,7 @@ matrix:
     - os: osx
       osx_image: xcode10.2
       compiler: gcc-8
-      env: MATRIX_EVAL="CXX=g++-8 && BUILD_TYPE=Debug"
+      env: MATRIX_EVAL="CXX=g++ && BUILD_TYPE=Debug"
 
     #==============================
     #
@@ -247,7 +247,7 @@ matrix:
     - os: osx
       osx_image: xcode10.2
       compiler: gcc-8
-      env: MATRIX_EVAL="CXX=g++-8 && BUILD_TYPE=Release"
+      env: MATRIX_EVAL="CXX=g++ && BUILD_TYPE=Release"
 
     #==============================
     #
