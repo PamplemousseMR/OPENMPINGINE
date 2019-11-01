@@ -48,18 +48,6 @@ matrix:
     #==============================
 
     - os: osx
-      osx_image: xcode8.3
-      env: MATRIX_EVAL="CXX=clang++ && BUILD_TYPE=Debug"
-
-    - os: osx
-      osx_image: xcode9.2
-      env: MATRIX_EVAL="CXX=clang++ && BUILD_TYPE=Debug"
-
-    - os: osx
-      osx_image: xcode9.4
-      env: MATRIX_EVAL="CXX=clang++ && BUILD_TYPE=Debug"
-
-    - os: osx
       osx_image: xcode10.1
       env: MATRIX_EVAL="CXX=clang++ && BUILD_TYPE=Debug"
 
@@ -255,18 +243,6 @@ matrix:
     #          osx clang
     #
     #==============================
-
-    - os: osx
-      osx_image: xcode8.3
-      env: MATRIX_EVAL="CXX=clang++ && BUILD_TYPE=Release"
-
-    - os: osx
-      osx_image: xcode9.2
-      env: MATRIX_EVAL="CXX=clang++ && BUILD_TYPE=Release"
-
-    - os: osx
-      osx_image: xcode9.4
-      env: MATRIX_EVAL="CXX=clang++ && BUILD_TYPE=Release"
 
     - os: osx
       osx_image: xcode10.1
