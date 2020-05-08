@@ -1,15 +1,9 @@
 language: cpp
 sudo: false
-dist: trusty
 
 matrix:
   include:
 
-    #============================================================
-    #
-    #                         Debug 
-    #
-    #============================================================
     #==============================
     #
     #          osx gcc
@@ -17,29 +11,29 @@ matrix:
     #==============================
 
     - os: osx
-      osx_image: xcode10.2
+      osx_image: xcode11.4
       compiler: gcc-4.9
-      env: MATRIX_EVAL="brew install gcc@4.9 && CXX=g++-4.9 && BUILD_TYPE=Debug"
+      env: MATRIX_EVAL="brew install gcc@4.9 && CXX=g++-4.9"
 
     - os: osx
-      osx_image: xcode10.2
+      osx_image: xcode11.4
       compiler: gcc-5
-      env: MATRIX_EVAL="brew install gcc@5 && CXX=g++-5 && BUILD_TYPE=Debug"
+      env: MATRIX_EVAL="brew install gcc@5 && CXX=g++-5"
 
     - os: osx
-      osx_image: xcode10.2
+      osx_image: xcode11.4
       compiler: gcc-6
-      env: MATRIX_EVAL="brew install gcc@6 && CXX=g++-6 && BUILD_TYPE=Debug"
+      env: MATRIX_EVAL="brew install gcc@6 && CXX=g++-6"
 
     - os: osx
-      osx_image: xcode10.2
+      osx_image: xcode11.4
       compiler: gcc-7
-      env: MATRIX_EVAL="brew install gcc@7 && CXX=g++-7 && BUILD_TYPE=Debug"
+      env: MATRIX_EVAL="brew install gcc@7 && CXX=g++-7"
 
     - os: osx
-      osx_image: xcode10.2
+      osx_image: xcode11.4
       compiler: gcc-8
-      env: MATRIX_EVAL="CXX=g++ && BUILD_TYPE=Debug"
+      env: MATRIX_EVAL="brew install gcc@8 && CXX=g++-8"
 
     #==============================
     #
@@ -47,13 +41,49 @@ matrix:
     #
     #==============================
 
+    #- os: osx
+    #  osx_image: xcode8.3
+    #  env: MATRIX_EVAL="CXX=clang++"
+
+    #- os: osx
+    #  osx_image: xcode9.2
+    #  env: MATRIX_EVAL="CXX=clang++"
+
+    - os: osx
+      osx_image: xcode9.4
+      env: MATRIX_EVAL="CXX=clang++"
+
     - os: osx
       osx_image: xcode10.1
-      env: MATRIX_EVAL="CXX=clang++ && BUILD_TYPE=Debug"
+      env: MATRIX_EVAL="CXX=clang++"
 
     - os: osx
       osx_image: xcode10.2
-      env: MATRIX_EVAL="CXX=clang++ && BUILD_TYPE=Debug"
+      env: MATRIX_EVAL="CXX=clang++"
+
+    - os: osx
+      osx_image: xcode10.3
+      env: MATRIX_EVAL="CXX=clang++"
+
+    - os: osx
+      osx_image: xcode11
+      env: MATRIX_EVAL="CXX=clang++"
+
+    - os: osx
+      osx_image: xcode11.1
+      env: MATRIX_EVAL="CXX=clang++"
+
+    - os: osx
+      osx_image: xcode11.2
+      env: MATRIX_EVAL="CXX=clang++"
+
+    - os: osx
+      osx_image: xcode11.3
+      env: MATRIX_EVAL="CXX=clang++"
+
+    - os: osx
+      osx_image: xcode11.4
+      env: MATRIX_EVAL="CXX=clang++"
 
     #==============================
     #
@@ -62,6 +92,20 @@ matrix:
     #==============================
 
     - os: linux
+      dist: xenial
+      compiler: gcc-4.8
+      addons:
+        apt:
+          sources:
+            - ubuntu-toolchain-r-test
+          packages:
+            - mpich
+            - libmpich-dev
+            - g++-4.8
+      env: MATRIX_EVAL="CXX=g++-4.8"
+      
+    - os: linux
+      dist: xenial
       compiler: gcc-4.9
       addons:
         apt:
@@ -71,9 +115,10 @@ matrix:
             - mpich
             - libmpich-dev
             - g++-4.9
-      env: MATRIX_EVAL="CXX=g++-4.9 && BUILD_TYPE=Debug"
-
+      env: MATRIX_EVAL="CXX=g++-4.9"
+      
     - os: linux
+      dist: xenial
       compiler: gcc-5
       addons:
         apt:
@@ -83,43 +128,59 @@ matrix:
             - mpich
             - libmpich-dev
             - g++-5
-      env: MATRIX_EVAL="CXX=g++-5 && BUILD_TYPE=Debug"
-
-    - os: linux
-      compiler: gcc-6
-      addons:
-        apt:
-          sources:
-            - ubuntu-toolchain-r-test
-          packages:
-            - mpich
-            - libmpich-dev
-            - g++-6
-      env: MATRIX_EVAL="CXX=g++-6 && BUILD_TYPE=Debug"
-
-    - os: linux
-      compiler: gcc-7
-      addons:
-        apt:
-          sources:
-            - ubuntu-toolchain-r-test
-          packages:
-            - mpich
-            - libmpich-dev
-            - g++-7
-      env: MATRIX_EVAL="CXX=g++-7 && BUILD_TYPE=Debug"
-
-    - os: linux
-      compiler: gcc-8
-      addons:
-        apt:
-          sources:
-            - ubuntu-toolchain-r-test
-          packages:
-            - mpich
-            - libmpich-dev
-            - g++-8
-      env: MATRIX_EVAL="CXX=g++-8 && BUILD_TYPE=Debug"
+      env: MATRIX_EVAL="CXX=g++-5"
+      
+    #- os: linux
+    #  dist: xenial
+    #  compiler: gcc-6
+    #  addons:
+    #    apt:
+    #      sources:
+    #        - ubuntu-toolchain-r-test
+    #      packages:
+    #        - mpich
+    #        - libmpich-dev
+    #        - g++-6
+    #  env: MATRIX_EVAL="CXX=g++-6"
+      
+    #- os: linux
+    #  dist: xenial
+    #  compiler: gcc-7
+    #  addons:
+    #    apt:
+    #      sources:
+    #        - ubuntu-toolchain-r-test
+    #      packages:
+    #        - mpich
+    #        - libmpich-dev
+    #        - g++-7
+    #  env: MATRIX_EVAL="CXX=g++-7"
+      
+    #- os: linux
+    #  dist: xenial
+    #  compiler: gcc-8
+    #  addons:
+    #    apt:
+    #      sources:
+    #        - ubuntu-toolchain-r-test
+    #      packages:
+    #        - mpich
+    #        - libmpich-dev
+    #        - g++-8
+    #  env: MATRIX_EVAL="CXX=g++-8"
+      
+    #- os: linux
+    #  dist: xenial
+    #  compiler: gcc-9
+    #  addons:
+    #    apt:
+    #      sources:
+    #        - ubuntu-toolchain-r-test
+    #      packages:
+    #        - mpich
+    #        - libmpich-dev
+    #        - g++-9
+    #  env: MATRIX_EVAL="CXX=g++-9"
 
     #==============================
     #
@@ -128,6 +189,7 @@ matrix:
     #==============================
 
     - os: linux
+      dist: xenial
       addons:
         apt:
           sources:
@@ -138,47 +200,10 @@ matrix:
             - libmpich-dev
             - clang-3.6
       env:
-        - MATRIX_EVAL="CXX=clang++-3.6 && BUILD_TYPE=Debug"
+        - MATRIX_EVAL="CXX=clang++-3.6"
 
     - os: linux
-      addons:
-        apt:
-          sources:
-            - ubuntu-toolchain-r-test
-            - llvm-toolchain-precise-3.7
-          packages:
-            - mpich
-            - libmpich-dev
-            - clang-3.7
-      env:
-        - MATRIX_EVAL="CXX=clang++-3.7 && BUILD_TYPE=Debug"
-
-    - os: linux
-      addons:
-        apt:
-          sources:
-            - ubuntu-toolchain-r-test
-            - llvm-toolchain-precise-3.8
-          packages:
-            - mpich
-            - libmpich-dev
-            - clang-3.8
-      env:
-        - MATRIX_EVAL="CXX=clang++-3.8 && sudo apt-get install libc++-dev && BUILD_TYPE=Debug"
-
-    - os: linux
-      addons:
-        apt:
-          sources:
-            - llvm-toolchain-trusty-3.9
-          packages:
-            - mpich
-            - libmpich-dev
-            - clang-3.9
-      env:
-        - MATRIX_EVAL="CXX=clang++-3.9 && sudo apt-get install libc++-dev && BUILD_TYPE=Debug"
-
-    - os: linux
+      dist: xenial
       addons:
         apt:
           sources:
@@ -188,230 +213,55 @@ matrix:
             - libmpich-dev
             - clang-4.0
       env:
-        - MATRIX_EVAL="CXX=clang++-4.0 && BUILD_TYPE=Debug"
+        - MATRIX_EVAL="CXX=clang++-4.0"
 
     - os: linux
+      dist: xenial
       addons:
         apt:
           sources:
-            - llvm-toolchain-trusty-5.0
+            - llvm-toolchain-xenial-5.0
           packages:
             - mpich
             - libmpich-dev
             - clang-5.0
       env:
-        - MATRIX_EVAL="CXX=clang++-5.0 && BUILD_TYPE=Debug"
-
-    #============================================================
-    #
-    #                         Release 
-    #
-    #============================================================
-    #==============================
-    #
-    #          osx gcc
-    #
-    #==============================
-
-    - os: osx
-      osx_image: xcode10.2
-      compiler: gcc-4.9
-      env: MATRIX_EVAL="brew install gcc@4.9 && CXX=g++-4.9 && BUILD_TYPE=Release"
-
-    - os: osx
-      osx_image: xcode10.2
-      compiler: gcc-5
-      env: MATRIX_EVAL="brew install gcc@5 && CXX=g++-5 && BUILD_TYPE=Release"
-
-    - os: osx
-      osx_image: xcode10.2
-      compiler: gcc-6
-      env: MATRIX_EVAL="brew install gcc@6 && CXX=g++-6 && BUILD_TYPE=Release"
-
-    - os: osx
-      osx_image: xcode10.2
-      compiler: gcc-7
-      env: MATRIX_EVAL="brew install gcc@7 && CXX=g++-7 && BUILD_TYPE=Release"
-
-    - os: osx
-      osx_image: xcode10.2
-      compiler: gcc-8
-      env: MATRIX_EVAL="CXX=g++ && BUILD_TYPE=Release"
-
-    #==============================
-    #
-    #          osx clang
-    #
-    #==============================
-
-    - os: osx
-      osx_image: xcode10.1
-      env: MATRIX_EVAL="CXX=clang++ && BUILD_TYPE=Release"
-
-    - os: osx
-      osx_image: xcode10.2
-      env: MATRIX_EVAL="CXX=clang++ && BUILD_TYPE=Release"
-
-    #==============================
-    #
-    #          linux gcc 
-    #
-    #==============================
+        - MATRIX_EVAL="CXX=clang++-5.0"
 
     - os: linux
-      compiler: gcc-4.9
+      dist: xenial
       addons:
         apt:
           sources:
-            - ubuntu-toolchain-r-test
+            - llvm-toolchain-xenial-6.0
           packages:
             - mpich
             - libmpich-dev
-            - g++-4.9
-      env: MATRIX_EVAL="CXX=g++-4.9 && BUILD_TYPE=Release"
-
-    - os: linux
-      compiler: gcc-5
-      addons:
-        apt:
-          sources:
-            - ubuntu-toolchain-r-test
-          packages:
-            - mpich
-            - libmpich-dev
-            - g++-5
-      env: MATRIX_EVAL="CXX=g++-5 && BUILD_TYPE=Release"
-
-    - os: linux
-      compiler: gcc-6
-      addons:
-        apt:
-          sources:
-            - ubuntu-toolchain-r-test
-          packages:
-            - mpich
-            - libmpich-dev
-            - g++-6
-      env: MATRIX_EVAL="CXX=g++-6 && BUILD_TYPE=Release"
-
-    - os: linux
-      compiler: gcc-7
-      addons:
-        apt:
-          sources:
-            - ubuntu-toolchain-r-test
-          packages:
-            - mpich
-            - libmpich-dev
-            - g++-7
-      env: MATRIX_EVAL="CXX=g++-7 && BUILD_TYPE=Release"
-
-    - os: linux
-      compiler: gcc-8
-      addons:
-        apt:
-          sources:
-            - ubuntu-toolchain-r-test
-          packages:
-            - mpich
-            - libmpich-dev
-            - g++-8
-      env: MATRIX_EVAL="CXX=g++-8 && BUILD_TYPE=Release"
-
-    #==============================
-    #
-    #          linux clang 
-    #
-    #==============================
-
-    - os: linux
-      addons:
-        apt:
-          sources:
-            - ubuntu-toolchain-r-test
-            - llvm-toolchain-precise-3.6
-          packages:
-            - mpich
-            - libmpich-dev
-            - clang-3.6
+            - clang-6.0
       env:
-        - MATRIX_EVAL="CXX=clang++-3.6 && BUILD_TYPE=Release"
-
-    - os: linux
-      addons:
-        apt:
-          sources:
-            - ubuntu-toolchain-r-test
-            - llvm-toolchain-precise-3.7
-          packages:
-            - mpich
-            - libmpich-dev
-            - clang-3.7
-      env:
-        - MATRIX_EVAL="CXX=clang++-3.7 && BUILD_TYPE=Release"
-
-    - os: linux
-      addons:
-        apt:
-          sources:
-            - ubuntu-toolchain-r-test
-            - llvm-toolchain-precise-3.8
-          packages:
-            - mpich
-            - libmpich-dev
-            - clang-3.8
-      env:
-        - MATRIX_EVAL="CXX=clang++-3.8 && sudo apt-get install libc++-dev && BUILD_TYPE=Release"
-
-    - os: linux
-      addons:
-        apt:
-          sources:
-            - llvm-toolchain-trusty-3.9
-          packages:
-            - mpich
-            - libmpich-dev
-            - clang-3.9
-      env:
-        - MATRIX_EVAL="CXX=clang++-3.9 && sudo apt-get install libc++-dev && BUILD_TYPE=Release"
-
-    - os: linux
-      addons:
-        apt:
-          sources:
-            - llvm-toolchain-trusty-4.0
-          packages:
-            - mpich
-            - libmpich-dev
-            - clang-4.0
-      env:
-        - MATRIX_EVAL="CXX=clang++-4.0 && BUILD_TYPE=Release"
-
-    - os: linux
-      addons:
-        apt:
-          sources:
-            - llvm-toolchain-trusty-5.0
-          packages:
-            - mpich
-            - libmpich-dev
-            - clang-5.0
-      env:
-        - MATRIX_EVAL="CXX=clang++-5.0 && BUILD_TYPE=Release"
+        - MATRIX_EVAL="CXX=clang++-6.0"
 
 before_install:
   - eval ${MATRIX_EVAL}
   - if [ $TRAVIS_OS_NAME = "osx" ]; then
       brew install openmpi;
     fi;
-
+    
 before_script:
-  - mkdir build
-  - cd build
-  - cmake ${TRAVIS_BUILD_DIR} -DCMAKE_BUILD_TYPE=${BUILD_TYPE} -DCMAKE_CXX_COMPILER=${CXX}
+  - cd ${TRAVIS_BUILD_DIR}/..  
+  - mkdir build_debug
+  - mkdir build_release
 
 script:
-  - make
+  - cd build_debug
+  - cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_CXX_COMPILER=${CXX} ${TRAVIS_BUILD_DIR} 
+  - cmake --build .
+  - if [ $TRAVIS_OS_NAME = "linux" ]; then
+      mpirun -np 5 ./openmpingine;
+    fi;
+  - cd ../build_release
+  - cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_COMPILER=${CXX} ${TRAVIS_BUILD_DIR} 
+  - cmake --build .
   - if [ $TRAVIS_OS_NAME = "linux" ]; then
       mpirun -np 5 ./openmpingine;
     fi;
