@@ -2,9 +2,9 @@
 
 MPI sandbox.
 
-## Travis 
+## CI
 
-[![Build Status](https://travis-ci.com/PamplemousseMR/OPENMPINGINE.svg?branch=master)](https://travis-ci.com/PamplemousseMR/OPENMPINGINE)
+![Build Status](https://github.com/PamplemousseMR/OPENMPINGINE/actions/workflows/build.yml/badge.svg)
 
 ## Getting Started
 
