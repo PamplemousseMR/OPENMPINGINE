@@ -90,6 +90,7 @@ jobs:
               sudo apt-get --assume-yes install mpich
               sudo apt-get --assume-yes install libmpich-dev
               sudo apt-get --assume-yes install ${{ matrix.COMPILER }}
+              sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/${{ matrix.COMPILER }} 50
           elif [ "$RUNNER_OS" == "Windows" ]; then
               echo "$RUNNER_OS not supported"
               exit 1
