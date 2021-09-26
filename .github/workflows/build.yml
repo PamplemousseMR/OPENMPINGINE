@@ -12,7 +12,7 @@ jobs:
       matrix:
         name: [ubuntu_18-04_g++4-8, ubuntu_18-04_g++5, ubuntu_18-04_g++6, ubuntu_18-04_g++7, ubuntu_18-04_g++8, 
                ubuntu_20-04_g++7, ubuntu_20-04_g++8, ubuntu_20-04_g++9, ubuntu_20-04_g++10,
-               macos-11_g++-5, macos-11_g++-6, macos-11_g++-7, macos-11_g++-8, macos-11_g++-9, macos-11_g++-10]
+               macos_11_g++5, macos_11_g++6, macos_11_g++7, macos_11_g++8, macos_11_g++9, macos_11_g++10]
         include:
         - name: ubuntu_18-04_g++4-8
           OS: ubuntu-18.04
@@ -50,32 +50,32 @@ jobs:
           OS: ubuntu-20.04
           COMPILER: g++-10
 
-        - name: macos-11_g++-5
+        - name: macos_11_g++5
           OS: macos-11
           INSTALL: gcc@5
           COMPILER: g++-5
 
-        - name: macos-11_g++-6
+        - name: macos_11_g++6
           OS: macos-11
           INSTALL: gcc@6
           COMPILER: g++-6
 
-        - name: macos-11_g++-7
+        - name: macos_11_g++7
           OS: macos-11
           INSTALL: gcc@7
           COMPILER: g++-7
 
-        - name: macos-11_g++-8
+        - name: macos_11_g++8
           OS: macos-11
           INSTALL: gcc@8
           COMPILER: g++-8
 
-        - name: macos-11_g++-9
+        - name: macos_11_g++9
           OS: macos-11
           INSTALL: gcc@9
           COMPILER: g++-9
 
-        - name: macos-11_g++-10
+        - name: macos_11_g++10
           OS: macos-11
           INSTALL: gcc@10
           COMPILER: g++-10
